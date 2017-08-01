@@ -17,15 +17,6 @@ dependencies {
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 
-bootRun.environment([
-        "WELCOME_MESSAGE": "hello",
-        "SPRING_DATASOURCE_URL": "jdbc:mariadb://localhost:3306/tracker_dev?user=tracker",
-])
-
-test.environment([
-        "WELCOME_MESSAGE": "Hello from test",
-        "SPRING_DATASOURCE_URL": "jdbc:mariadb://localhost:3306/tracker_test?user=tracker",
-])
 
 def developmentDbUrl = "jdbc:mariadb://localhost:3306/tracker_dev?user=tracker"
 bootRun.environment([
