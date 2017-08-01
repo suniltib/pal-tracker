@@ -17,8 +17,8 @@ public class PalTrackerApplication {
         SpringApplication.run(PalTrackerApplication.class, args);
     }
     @Bean
-    TimeEntryRepository timeEntryRepository() throws Exception{
-        DataSource dataSource = new MariaDbDataSource(System.getenv("SPRING_DATASOURCE_URL"));
+    TimeEntryRepository timeEntryRepository( DataSource dataSource) throws Exception{
+
         return new JdbcTimeEntryRepository(dataSource);
     }
 }
